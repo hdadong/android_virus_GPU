@@ -1,6 +1,7 @@
 ＃在GPU下训练CNN
+
 使用0train.csv训练
-修改了client中的读入预处理
+修改了client中的读入预处理，进行了Minmax归一化，之前master的client的代码有问题
 
 ![image](https://user-images.githubusercontent.com/44421595/111877777-ddfd2800-89df-11eb-806c-2a9e3606cc31.png)
 lr=1 batchsize 512 68%
