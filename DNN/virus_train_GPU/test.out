@@ -1,0 +1,705 @@
+nohup: 忽略输入
+cuda
+2021-03-21 15:11:14,794 | number of true indices: 5000
+/opt/conda/conda-bld/pytorch_1579022060824/work/aten/src/ATen/native/LegacyDefinitions.cpp:70: UserWarning: masked_select received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead.
+selected_data tensor([[1.4306e-04, 0.0000e+00, 0.0000e+00,  ..., 2.8791e-03, 3.2322e-02,
+         1.2756e-04],
+        [5.7225e-04, 0.0000e+00, 0.0000e+00,  ..., 9.5969e-04, 2.4377e-02,
+         6.8390e-05],
+        [1.4306e-04, 0.0000e+00, 0.0000e+00,  ..., 9.5969e-04, 7.0727e-04,
+         1.0758e-05],
+        ...,
+        [0.0000e+00, 0.0000e+00, 0.0000e+00,  ..., 2.8791e-03, 2.2397e-03,
+         1.0758e-05],
+        [8.5837e-04, 0.0000e+00, 0.0000e+00,  ..., 1.9194e-03, 8.5659e-04,
+         2.0748e-05],
+        [8.5837e-04, 0.0000e+00, 0.0000e+00,  ..., 6.7179e-03, 2.4755e-03,
+         3.9190e-05]], device='cuda:0')
+2021-03-21 15:11:16,560 | after selection: torch.Size([5000, 470])
+/opt/conda/conda-bld/pytorch_1579022060824/work/aten/src/ATen/native/LegacyDefinitions.cpp:70: UserWarning: masked_select received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead.
+2021-03-21 15:11:16,561 | MNIST dataset (train set), available numbers on alice: 
+2021-03-21 15:11:16,561 |       0: 509
+2021-03-21 15:11:16,561 |       1: 918
+2021-03-21 15:11:16,561 |       2: 1707
+2021-03-21 15:11:16,562 |       3: 1055
+2021-03-21 15:11:16,562 |       4: 811
+2021-03-21 15:11:16,562 | datasets: {'mnist': BaseDataset
+	Data: tensor([[1.4306e-04, 0.0000e+00, 0.0000e+00,  ..., 2.8791e-03, 3.2322e-02,
+         1.2756e-04],
+        [5.7225e-04, 0.0000e+00, 0.0000e+00,  ..., 9.5969e-04, 2.4377e-02,
+         6.8390e-05],
+        [1.4306e-04, 0.0000e+00, 0.0000e+00,  ..., 9.5969e-04, 7.0727e-04,
+         1.0758e-05],
+        ...,
+        [0.0000e+00, 0.0000e+00, 0.0000e+00,  ..., 2.8791e-03, 2.2397e-03,
+         1.0758e-05],
+        [8.5837e-04, 0.0000e+00, 0.0000e+00,  ..., 1.9194e-03, 8.5659e-04,
+         2.0748e-05],
+        [8.5837e-04, 0.0000e+00, 0.0000e+00,  ..., 6.7179e-03, 2.4755e-03,
+         3.9190e-05]], device='cuda:0')
+	targets: tensor([4, 2, 2,  ..., 2, 0, 1], device='cuda:0')}
+2021-03-21 15:11:16,565 | len(datasets[mnist]): 5000
+Serving. Press CTRL-C to stop.
+/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/syft/workers/websocket_server.py:93: RuntimeWarning: coroutine 'WebsocketServerWorker._consumer_handler' was never awaited
+  self._consumer_handler(websocket)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2021-03-21 15:23:07,659 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,660 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,660 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,661 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,661 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,661 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,661 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,661 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,662 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,662 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,662 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,662 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,662 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,662 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,663 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,663 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:23:07,663 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:25:04,226 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:25:04,227 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:25:04,228 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:25:04,228 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:25:04,229 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:26:24,483 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:27:13,607 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:27:13,608 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:29:31,027 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:29:31,027 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:30:45,614 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:30:45,615 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:30:45,616 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:32:06,095 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:32:06,095 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+2021-03-21 15:32:06,095 | Future exception was never retrieved
+future: <Future finished exception=ConnectionClosedError('code = 1006 (connection closed abnormally [internal]), no reason')>
+Traceback (most recent call last):
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/protocol.py", line 1051, in read_frame
+    extensions=self.extensions,
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/site-packages/websockets/framing.py", line 105, in read
+    data = await reader(2)
+  File "/usr/local/miniconda3/envs/dl/lib/python3.7/asyncio/streams.py", line 677, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
