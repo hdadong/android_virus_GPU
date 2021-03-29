@@ -123,7 +123,8 @@ traced_model = torch.jit.trace(model, torch.zeros([1, 1, 470], dtype=torch.float
                 traced_model=traced_model,
                 batch_size=args.batch_size,
                 curr_round=curr_round,
-                max_nr_batches=args.federate_after_n_batches,
+                max_nr_batches=args.federate_after_n_batches, #当epoch =1时，若max_nr_batches>0,则本地服务器训练了若max_nr_batches个batch就会停止训练。当epoch >1时，若max_nr_batches>0,则本地服务器每个epoch只训练了max_nr_batches个batch。
+                所以这个参数应该置为负数。
                 lr=learning_rate,
             )
             
