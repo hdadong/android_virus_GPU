@@ -174,3 +174,84 @@ http://www.shangdixinxi.com/detail-1590606.html
 pysyft使用参考  
 1.https://zhuanlan.zhihu.com/p/181733116?utm_source=wechat_session  
 2.https://zhuanlan.zhihu.com/p/349204625
+
+
+＃批量读入
+```
+    #修改federated_client.py
+    def _fit(self, model, dataset_key, loss_fn, device="cpu"):
+        print("fit")
+        model.train()
+        '''
+        data_loader = self._create_data_loader(
+            dataset_key=dataset_key, shuffle=self.train_config.shuffle
+        )
+        '''
+        data_loader = self.datasets[dataset_key]
+        
+        loss = None
+        iteration_count = 0
+        '''
+        for _ in range(self.train_config.epochs):
+            for (data, target) in data_loader:
+                # Set gradients to zero
+                self.optimizer.zero_grad()
+
+                # Update model
+                output = model(data.to(device))
+                loss = loss_fn(target=target.to(device), pred=output)
+                loss.backward()
+                self.optimizer.step()
+
+                # Update and check interation count
+                iteration_count += 1
+                if iteration_count >= self.train_config.max_nr_batches >= 0:
+                    break
+        '''
+        for _ in range(self.train_config.epochs):
+            loop = True
+            while loop:
+                try:
+                    print(1)
+                    data_target = data_loader.get_chunk(self.train_config.batch_size)
+                    data_target = data_target.values
+                    data = data_target[:,0:9503]
+                    target = data_target[:,9503]
+                    from sklearn import preprocessing
+                    min_max_scaler = preprocessing.MinMaxScaler()
+                    data = min_max_scaler.fit_transform(data)
+                    
+                    data = th.FloatTensor(data)
+                    target = th.LongTensor(target)
+                    
+                    # Set gradients to zero
+                    self.optimizer.zero_grad()
+
+                    # Update model
+                    output = model(data.to(device))
+                    loss = loss_fn(target=target.to(device), pred=output)
+                    loss.backward()
+                    self.optimizer.step()
+
+
+                except StopIteration:
+                    loop = False
+           
+        return loss
+```
+```
+#server.py修改如下
+def start_websocket_server_worker(id, host, port, hook, verbose, keep_labels=None, training=True):
+    """Helper function for spinning up a websocket server and setting up the local datasets."""
+
+    server = websocket_server.WebsocketServerWorker(
+        id=id, host=host, port=port, hook=hook, verbose=verbose
+    )
+
+    dataset = pd.read_csv("0.csv",dtype=float,skiprows=1, iterator=True)
+    key = "mnist"
+    server.add_dataset(dataset, key=key)
+
+    server.start()
+    return server
+```
