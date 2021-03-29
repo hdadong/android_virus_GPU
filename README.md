@@ -49,7 +49,16 @@ nohup  python -u run_websocket_server_testing.py --host 0.0.0.0  --port 28007 --
 ```
 cat test.out 查看输出
 ```
-
+```
+设置过滤标签
+KEEP_LABELS_DICT = {
+    "alice": list(range(15)),
+    "bob": list(range(15)),
+    "charlie": list(range(15)),
+    "testing": list(range(15)),
+    #None: list(range(5)),
+}
+```
 ## 训练端服务器执行代码
 ```
 git clone git@github.com:hdadong/android_virus_GPU.git
@@ -66,7 +75,16 @@ ll
 nohup  python -u run_websocket_server.py --host 0.0.0.0  --port 28068 --id bob > test.out 2>&1 &   
 ```
 <br>这里的IP、端口需、woker的名字（alice或者bob)要修改，执行完这句代码后，测试woker将会被挂起，等待协调端把模型参数、模型结构、训练参数发送过来，被唤醒后会调用本地数据集进行训练，训练结束后会把模型参数发送回给协调端  
-
+```
+设置过滤标签
+KEEP_LABELS_DICT = {
+    "alice": list(range(15)),
+    "bob": list(range(15)),
+    "charlie": list(range(15)),
+    "testing": list(range(15)),
+    #None: list(range(5)),
+}
+```
 ## 协调端  
     按顺序执行Asynchronous-federated-learning-on-MNIST.ipynb的代码段  
     需要注意的是  
