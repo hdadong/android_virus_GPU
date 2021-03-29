@@ -87,7 +87,20 @@ KEEP_LABELS_DICT = {
 ```
 ## 协调端  
     按顺序执行Asynchronous-federated-learning-on-MNIST.ipynb的代码段  
-    需要注意的是  
+    需要注意的是 
+### clien.py
+```
+    train_config = sy.TrainConfig(
+        model=traced_model,
+        loss_fn=loss_fn,
+        batch_size=batch_size,
+        shuffle=True,
+        max_nr_batches=max_nr_batches,
+        epochs=1,
+        optimizer="SGD",
+        optimizer_args={"lr": lr},
+    )
+```    
 ### 第六个代码段  
 ![image](https://user-images.githubusercontent.com/44421595/112457567-db5f5180-8d96-11eb-8705-4f04452fadd8.png)  
     需要修改训练和测试woker的IP和端口  
