@@ -117,7 +117,27 @@ traced_model = torch.jit.trace(model, torch.zeros([1, 1, 470], dtype=torch.float
     470为模型的输入维度，这行代码是把模型结构和参数进行序列化后再传送  
     await asyncio.gather 是等待所有的训练节点返回模型的参数后再继续训练  
     learning_rate = max(0.99 * learning_rate, args.lr * 0.01)  设置lr的衰减率  
-
+```
+            rwc.fit_model_on_worker(
+                worker=worker,
+                traced_model=traced_model,
+                batch_size=args.batch_size,
+                curr_round=curr_round,
+                max_nr_batches=args.federate_after_n_batches,
+                lr=learning_rate,
+            )
+            
+                        rwc.evaluate_model_on_worker(
+                model_identifier="Model update " + worker_id,
+                worker=testing,
+                dataset_key="mnist_testing",
+                model=worker_model,
+                nr_bins=5,
+                batch_size=128,
+                print_target_hist=False,
+                device=device
+            )
+```
 
 # 参考文献
 环境配置参考  
