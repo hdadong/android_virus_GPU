@@ -11,6 +11,12 @@
 <br>PySyft-0.2.4版本
 # 环境安装
 ```
+# 添加清华源的pytorch
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 # conda install pytorch==1.4.0 torchvision==0.5.0 -c pytorch #下载CPU版本pytorch
 pip3 install syft==0.2.4 --no-dependencies
