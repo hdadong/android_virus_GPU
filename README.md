@@ -13,7 +13,7 @@
 ```
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 # conda install pytorch==1.4.0 torchvision==0.5.0 -c pytorch #下载CPU版本pytorch
-pip3 install syft==0.2.4 --no-dependencies
+pip install syft==0.2.4 --no-dependencies
 # 安装以下依赖
 pip install lz4~=3.0.2 msgpack~=1.0.0 phe~=1.4.0 scipy~=1.4.1 syft-proto~=0.2.5.a1 tblib~=1.6.0 websocket-client~=0.57.0 
 pip install websockets~=8.1.0 zstd~=1.4.4.0 Flask~=1.1.1 tornado==4.5.3 flask-socketio~=4.2.1 lz4~=3.0.2 Pillow~=6.2.2 
