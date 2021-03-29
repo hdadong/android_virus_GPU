@@ -90,6 +90,34 @@ KEEP_LABELS_DICT = {
     需要注意的是 
 ### clien.py
 ```
+def define_and_get_arguments(args=sys.argv[1:]):
+    parser = argparse.ArgumentParser(
+        description="Run federated learning using websocket client workers."
+    )
+    parser.add_argument("--batch_size", type=int, default=512, help="batch size of the training")
+    parser.add_argument(
+        "--test_batch_size", type=int, default=128, help="batch size used for the test data"
+    )
+    parser.add_argument(
+        "--training_rounds", type=int, default=1000, help="number of federated learning rounds"
+    )
+    parser.add_argument(
+        "--federate_after_n_batches",
+        type=int,
+        default=10,
+        help="number of training steps performed on each remote worker before averaging",
+    )
+    parser.add_argument("--lr", type=float, default=0.8, help="learning rate")
+    parser.add_argument("--cuda", action="store_true", help="use cuda")
+    parser.add_argument("--seed", type=int, default=1, help="seed used for randomization")
+    parser.add_argument("--save_model", action="store_true", help="if set, model will be saved")
+    parser.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        help="if set, websocket client workers will be started in verbose mode",
+    )
+
     train_config = sy.TrainConfig(
         model=traced_model,
         loss_fn=loss_fn,
