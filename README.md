@@ -255,3 +255,13 @@ def start_websocket_server_worker(id, host, port, hook, verbose, keep_labels=Non
     server.start()
     return server
 ```
+```
+ # websocket_client.py修改如下
+ async with websockets.connect(
+            self.url, timeout=TIMEOUT_INTERVAL, max_size=None, ping_timeout=TIMEOUT_INTERVAL
+        ) 
+  改为
+   async with websockets.connect(
+            self.url, timeout=None, max_size=None, ping_timeout=None,ping_interval=None
+        ) 
+```
