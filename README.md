@@ -178,7 +178,6 @@ pysyft使用参考
 
 ＃批量读入
 ```
-    #修改federated_client.py
     def _fit(self, model, dataset_key, loss_fn, device="cpu"):
         print("fit")
         model.train()
@@ -210,13 +209,17 @@ pysyft使用参考
         '''
         for _ in range(self.train_config.epochs):
             loop = True
+            t = 0
             while loop:
                 try:
-                    print(1)
+                    print(t)
+                    t = t+1
                     data_target = data_loader.get_chunk(self.train_config.batch_size)
                     data_target = data_target.values
                     data = data_target[:,0:9503]
                     target = data_target[:,9503]
+                    data_target = None #erase the old
+                    
                     from sklearn import preprocessing
                     min_max_scaler = preprocessing.MinMaxScaler()
                     data = min_max_scaler.fit_transform(data)
@@ -233,11 +236,15 @@ pysyft使用参考
                     loss.backward()
                     self.optimizer.step()
 
-
+                    # Update and check interation count
+                    iteration_count += 1
+                    if iteration_count >= self.train_config.max_nr_batches >= 0:
+                        break
                 except StopIteration:
                     loop = False
-           
+        data_loader = None #erase the old
         return loss
+
 ```
 ```
 #server.py修改如下
