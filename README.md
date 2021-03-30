@@ -265,3 +265,7 @@ def start_websocket_server_worker(id, host, port, hook, verbose, keep_labels=Non
             self.url, timeout=None, max_size=None, ping_timeout=None,ping_interval=None
         ) 
 ```
+```
+            self.ws = websocket.create_connection(self.url, max_size=None, timeout=TIMEOUT_INTERVAL)
+            #change -> self.ws = websocket.create_connection(self.url, max_size=None, timeout=None)
+```
